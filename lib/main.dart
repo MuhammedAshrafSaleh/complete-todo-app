@@ -3,8 +3,7 @@ import 'package:complete_todo_app/utilities/router.dart';
 import 'package:complete_todo_app/utilities/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
-import 'ui/theme.dart';
+import 'utilities/theme.dart';
 
 void main() {
   runApp(const MyApp());
