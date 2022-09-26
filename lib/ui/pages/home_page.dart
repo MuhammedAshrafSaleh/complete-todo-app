@@ -1,6 +1,8 @@
 import 'package:complete_todo_app/services/theme_services.dart';
 import 'package:flutter/material.dart';
 
+import '../widgets/button.dart';
+
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
@@ -22,7 +24,12 @@ class _HomePageState extends State<HomePage> {
           ),
         ],
       ),
-      body: Container(),
+      body: Center(
+        child: customButton(
+          function: () {},
+          label: 'Add Task',
+        ),
+      ),
     );
   }
 }
