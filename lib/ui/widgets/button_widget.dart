@@ -10,13 +10,12 @@ Widget customButton({
     child: Container(
       alignment: Alignment.center,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10),
-        color: AppColor.primaryClr,
-      ),
+          borderRadius: BorderRadius.circular(10), color: AppColor.primaryClr),
       width: 100,
       height: 45,
       child: Text(
         label,
+        style: AppThemes.subtitleStyle.copyWith(color: AppColor.white),
       ),
     ),
   );

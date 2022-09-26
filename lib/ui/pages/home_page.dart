@@ -2,8 +2,8 @@ import 'package:complete_todo_app/services/theme_services.dart';
 import 'package:complete_todo_app/utilities/size_config.dart';
 import 'package:flutter/material.dart';
 
-import '../widgets/button.dart';
-import '../widgets/input_field_container.dart';
+import '../widgets/button_widget.dart';
+import '../widgets/input_field_container_widget.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);

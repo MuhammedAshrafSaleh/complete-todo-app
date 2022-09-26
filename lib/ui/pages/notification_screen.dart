@@ -29,7 +29,7 @@ class _NotificationScreenState extends State<NotificationScreen> {
         ),
         title: Text(
           _load.split('|')[0],
-          // style: Themes.headingStyle,
+          style: AppThemes.headingStyle,
         ),
         elevation: 0,
         backgroundColor: Theme.of(context).backgroundColor,

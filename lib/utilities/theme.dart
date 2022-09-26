@@ -12,7 +12,7 @@ class AppColor {
   static const Color darkHeaderClr = Color(0xFF424242);
 }
 
-class Themes {
+class AppThemes {
   static final light = ThemeData(
     primaryColor: AppColor.primaryClr,
     backgroundColor: AppColor.white,

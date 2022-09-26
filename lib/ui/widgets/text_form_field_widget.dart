@@ -7,18 +7,18 @@ Widget buildTextFormField({
   required BuildContext context,
   required String hint,
   required TextEditingController? controller,
-  IconData? icon,
+  Widget? widget,
 }) {
   return Expanded(
     child: TextFormField(
       controller: controller,
       autofocus: false,
       cursorColor: Get.isDarkMode ? Colors.grey[100] : Colors.grey[700],
-      style: Themes.subtitleStyle,
-      readOnly: icon != null,
+      style: AppThemes.bodyText1Style,
+      readOnly: widget != null,
       decoration: InputDecoration(
         hintText: hint,
-        helperStyle: Themes.subtitleStyle,
+        helperStyle: AppThemes.bodyText1Style,
         border: const OutlineInputBorder(),
         enabledBorder: OutlineInputBorder(
           borderSide: const BorderSide(
@@ -34,12 +34,7 @@ Widget buildTextFormField({
           ),
           borderRadius: BorderRadius.circular(10),
         ),
-        suffixIcon: TextButton(
-          onPressed: () {},
-          child: Icon(
-            icon,
-          ),
-        ),
+        suffixIcon: widget,
       ),
     ),
   );
