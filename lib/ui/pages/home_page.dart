@@ -1,3 +1,4 @@
+import 'package:complete_todo_app/services/theme_services.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -11,7 +12,16 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        actions: [
+          IconButton(
+            onPressed: () {
+              ThemeServices().switchTheme();
+            },
+            icon: const Icon(Icons.brightness_4),
+          ),
+        ],
+      ),
       body: Container(),
     );
   }

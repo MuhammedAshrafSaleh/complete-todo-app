@@ -1,3 +1,4 @@
+import 'package:complete_todo_app/services/theme_services.dart';
 import 'package:complete_todo_app/utilities/router.dart';
 import 'package:complete_todo_app/utilities/routes.dart';
 import 'package:flutter/material.dart';
@@ -14,11 +15,15 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const GetMaterialApp(
+    return GetMaterialApp(
+      theme: Themes.light,
+      darkTheme: Themes.dark,
+      // Create Object From Our ThemeServices
+      themeMode: ThemeServices().theme,
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       // home: NotificationScreen(),
-      initialRoute: AppRoute.notificationScreenRoute,
+      initialRoute: AppRoute.homeScreenRoute,
       onGenerateRoute: onGenerateRoute,
     );
   }
