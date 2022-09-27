@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../widgets/custom_appbar_widget.dart';
+import '../widgets/date_picker_widget.dart';
 import '../widgets/task_bar_widget.dart';
 
 class HomePage extends StatefulWidget {
@@ -33,6 +34,7 @@ class _HomePageState extends State<HomePage> {
         child: Column(
           children: [
             buildTaskBar(),
+            const BuildDatePicker(),
           ],
         ),
       ),
