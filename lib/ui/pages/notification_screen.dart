@@ -1,5 +1,6 @@
 // ignore_for_file: library_private_types_in_public_api
 
+import 'package:complete_todo_app/ui/widgets/custom_appbar_widget.dart';
 import 'package:complete_todo_app/utilities/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -23,17 +24,11 @@ class _NotificationScreenState extends State<NotificationScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Theme.of(context).backgroundColor,
-      appBar: AppBar(
-        leading: IconButton(
-          onPressed: () => Get.back(),
-          icon: const Icon(Icons.arrow_back_ios),
-        ),
-        title: Text(
-          _load.split('|')[0],
-          style: AppThemes.headingStyle,
-        ),
-        elevation: 0,
-        backgroundColor: Theme.of(context).backgroundColor,
+      // TODO:
+      appBar: customAppBar(
+        context,
+        onPressed: () {},
+        icon: Icons.arrow_back_ios,
       ),
       body: SafeArea(
         child: Column(

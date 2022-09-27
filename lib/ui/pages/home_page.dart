@@ -3,9 +3,8 @@ import 'package:complete_todo_app/utilities/size_config.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../widgets/button_widget.dart';
 import '../widgets/custom_appbar_widget.dart';
-import '../widgets/input_field_container_widget.dart';
+import '../widgets/task_bar_widget.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -29,17 +28,13 @@ class _HomePageState extends State<HomePage> {
             ? Icons.wb_sunny_outlined
             : Icons.nightlight_outlined,
       ),
-      body: Column(
-        children: [
-          customButton(
-            function: () {},
-            label: 'Add Task',
-          ),
-          const InputFieldContainer(
-            hint: 'Write your email',
-            title: 'Email',
-          ),
-        ],
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 20),
+        child: Column(
+          children: [
+            buildTaskBar(),
+          ],
+        ),
       ),
     );
   }

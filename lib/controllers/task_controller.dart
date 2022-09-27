@@ -1,1 +1,3 @@
-class TaskController {}
+class TaskController {
+  void getData() {}
+}
