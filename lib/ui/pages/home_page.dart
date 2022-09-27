@@ -1,3 +1,4 @@
+import 'package:complete_todo_app/models/task.dart';
 import 'package:complete_todo_app/services/notification_services.dart';
 import 'package:complete_todo_app/services/theme_services.dart';
 import 'package:complete_todo_app/utilities/size_config.dart';
@@ -8,6 +9,7 @@ import '../widgets/custom_appbar_widget.dart';
 import '../widgets/date_picker_widget.dart';
 import '../widgets/no_task_widget.dart';
 import '../widgets/task_bar_widget.dart';
+import '../widgets/task_tile_widget.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -51,9 +53,29 @@ class _HomePageState extends State<HomePage> {
           children: [
             buildTaskBar(),
             const BuildDatePicker(),
-            Expanded(
-              child: noTask(),
+            TaskTile(
+              task: Task(
+                color: 1,
+                endTime: "07:00 PM",
+                startTime: "06:00 PM",
+                title: "Go To Gym",
+                note: "Please Go To The Gym",
+                isCompleted: 0,
+              ),
             ),
+            TaskTile(
+              task: Task(
+                color: 0,
+                endTime: "07:00 PM",
+                startTime: "06:00 PM",
+                title: "Go To Gym",
+                note: "Please Go To The Gym",
+                isCompleted: 1,
+              ),
+            ),
+            // Expanded(
+            //   child: noTask(),
+            // ),
           ],
         ),
       ),

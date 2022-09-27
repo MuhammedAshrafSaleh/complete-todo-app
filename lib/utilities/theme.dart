@@ -10,6 +10,7 @@ class AppColor {
   static const primaryClr = bluishClr;
   static const Color darkGreyClr = Color(0xFF121212);
   static const Color darkHeaderClr = Color(0xFF424242);
+  static Color? grey = Colors.grey[200];
 }
 
 class AppThemes {
