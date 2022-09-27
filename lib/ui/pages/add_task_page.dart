@@ -6,6 +6,7 @@ import 'package:intl/intl.dart';
 
 import '../../utilities/theme.dart';
 import '../widgets/circle_avater_widget.dart';
+import '../widgets/custom_appbar_widget.dart';
 import '../widgets/dropdown_button_widget.dart';
 import '../widgets/input_field_container_widget.dart';
 
@@ -50,7 +51,13 @@ class _AddTaskPageState extends State<AddTaskPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: customAppBar(
+        context,
+        onPressed: () {
+          Get.back();
+        },
+        icon: Icons.arrow_back_ios,
+      ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 10),
         child: SingleChildScrollView(
@@ -151,23 +158,7 @@ class _AddTaskPageState extends State<AddTaskPage> {
                       textBaseline: TextBaseline.alphabetic,
                       crossAxisAlignment: CrossAxisAlignment.baseline,
                       children: [
-                        Row(
-                          children:
-                              List.generate(circlesColors.length, (index) {
-                            return Padding(
-                              padding: const EdgeInsets.only(right: 10),
-                              child: circleAvaterWidget(
-                                color: circlesColors[index],
-                                onTap: () {
-                                  setState(() {
-                                    _selectedColor = index;
-                                  });
-                                },
-                                isClicked: _selectedColor == index,
-                              ),
-                            );
-                          }),
-                        ),
+                        buildColorPalatte(),
                         const Spacer(),
                         customButton(label: "Create Task", function: () {}),
                       ],
@@ -182,6 +173,25 @@ class _AddTaskPageState extends State<AddTaskPage> {
           ),
         ),
       ),
+    );
+  }
+
+  Widget buildColorPalatte() {
+    return Row(
+      children: List.generate(circlesColors.length, (index) {
+        return Padding(
+          padding: const EdgeInsets.only(right: 10),
+          child: circleAvaterWidget(
+            color: circlesColors[index],
+            onTap: () {
+              setState(() {
+                _selectedColor = index;
+              });
+            },
+            isClicked: _selectedColor == index,
+          ),
+        );
+      }),
     );
   }
 }

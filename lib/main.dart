@@ -1,4 +1,3 @@
-import 'package:complete_todo_app/services/theme_services.dart';
 import 'package:complete_todo_app/ui/pages/add_task_page.dart';
 import 'package:complete_todo_app/ui/pages/home_page.dart';
 import 'package:complete_todo_app/ui/pages/notification_screen.dart';
@@ -20,11 +19,11 @@ class MyApp extends StatelessWidget {
       theme: AppThemes.light,
       darkTheme: AppThemes.dark,
       // Create Object From Our ThemeServices
-      themeMode: ThemeMode.dark,
+      themeMode: ThemeMode.light,
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       // home: NotificationScreen(),
-      initialRoute: AppRoute.addTaskScreenRoute,
+      initialRoute: AppRoute.homeScreenRoute,
       defaultTransition: Transition.leftToRightWithFade,
       getPages: [
         GetPage(
