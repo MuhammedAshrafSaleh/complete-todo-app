@@ -1,3 +1,4 @@
+import 'package:complete_todo_app/services/notification_services.dart';
 import 'package:complete_todo_app/services/theme_services.dart';
 import 'package:complete_todo_app/utilities/size_config.dart';
 import 'package:flutter/material.dart';
@@ -16,6 +17,15 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  late NotifyHelper notifyHelper;
+  @override
+  void initState() {
+    super.initState();
+    notifyHelper = NotifyHelper();
+    notifyHelper.initailzeNotification();
+    notifyHelper.requestAndroidPermession();
+  }
+
   @override
   Widget build(BuildContext context) {
     SizeConfig.init(context);
@@ -25,6 +35,11 @@ class _HomePageState extends State<HomePage> {
         context,
         onPressed: () {
           ThemeServices().switchTheme();
+          notifyHelper.displayNotification(
+            title: "Theme Changed",
+            body: "Already Changed And You Not Untill Now!",
+          );
+          notifyHelper.scheduleNotification();
         },
         icon: Get.isDarkMode
             ? Icons.wb_sunny_outlined

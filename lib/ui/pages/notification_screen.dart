@@ -7,7 +7,7 @@ import 'package:get/get.dart';
 
 class NotificationScreen extends StatefulWidget {
   const NotificationScreen({Key? key, required this.load}) : super(key: key);
-  final String load;
+  final String? load;
   @override
   _NotificationScreenState createState() => _NotificationScreenState();
 }
@@ -27,7 +27,9 @@ class _NotificationScreenState extends State<NotificationScreen> {
       // TODO:
       appBar: customAppBar(
         context,
-        onPressed: () {},
+        onPressed: () {
+          Get.back();
+        },
         icon: Icons.arrow_back_ios,
       ),
       body: SafeArea(
