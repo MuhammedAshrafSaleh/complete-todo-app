@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 
 import '../widgets/custom_appbar_widget.dart';
 import '../widgets/date_picker_widget.dart';
+import '../widgets/no_task_widget.dart';
 import '../widgets/task_bar_widget.dart';
 
 class HomePage extends StatefulWidget {
@@ -35,6 +36,9 @@ class _HomePageState extends State<HomePage> {
           children: [
             buildTaskBar(),
             const BuildDatePicker(),
+            Expanded(
+              child: noTask(),
+            ),
           ],
         ),
       ),

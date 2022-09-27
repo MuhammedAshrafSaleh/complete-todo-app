@@ -51,6 +51,7 @@ class _AddTaskPageState extends State<AddTaskPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Theme.of(context).backgroundColor,
       appBar: customAppBar(
         context,
         onPressed: () {

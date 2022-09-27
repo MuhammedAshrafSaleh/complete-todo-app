@@ -21,7 +21,7 @@ AppBar customAppBar(
     ),
     actions: const [
       CircleAvatar(
-        // backgroundImage: AssetImage("assets/images/person.jpeg"),
+        backgroundImage: AssetImage("assets/images/person.jpeg"),
         radius: 18,
       ),
       SizedBox(
